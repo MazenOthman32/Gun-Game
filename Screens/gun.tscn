@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6u7ddd167p4s"]
+
+[ext_resource type="Texture2D" uid="uid://b3rto2nnqyu3b" path="res://game assets/cannon_base.png" id="1_dk5gl"]
+[ext_resource type="Texture2D" uid="uid://cnlmfnjfx4xq6" path="res://game assets/cannon_head.png" id="2_kw0bs"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8iju2"]
+radius = 22.0
+height = 92.0
+
+[node name="Gun" type="Node2D"]
+position = Vector2(482, 304)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_dk5gl")
+
+[node name="gun" type="CharacterBody2D" parent="."]
+position = Vector2(-20, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gun"]
+position = Vector2(13, 19)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_8iju2")
+
+[node name="Sprite2D" type="Sprite2D" parent="gun"]
+position = Vector2(17, 2)
+texture = ExtResource("2_kw0bs")

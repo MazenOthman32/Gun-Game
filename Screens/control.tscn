@@ -1,0 +1,113 @@
+[gd_scene load_steps=7 format=3 uid="uid://b34d2i7ss4dkw"]
+
+[ext_resource type="FontFile" uid="uid://csvbcqv4ivnlp" path="res://game assets/PlaymegamesReguler-2OOee.ttf" id="1_oytvk"]
+[ext_resource type="Script" uid="uid://nkexv2k7cppd" path="res://Scripts/menu.gd" id="1_vc1ty"]
+[ext_resource type="Texture2D" uid="uid://n13jc6dlu8la" path="res://game assets/big_.png" id="2_vc1ty"]
+[ext_resource type="Texture2D" uid="uid://bdqcculxrf58y" path="res://game assets/big_pressed.png" id="3_yq6a1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_74tf6"]
+font = ExtResource("1_oytvk")
+font_size = 150
+
+[sub_resource type="LabelSettings" id="LabelSettings_oytvk"]
+font = ExtResource("1_oytvk")
+font_size = 70
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vc1ty")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.29142, 0.298979, 0.580258, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 84.0
+offset_right = 881.0
+offset_bottom = 211.0
+text = "Gun Game"
+label_settings = SubResource("LabelSettings_74tf6")
+
+[node name="play" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 238.0
+offset_right = 717.0
+offset_bottom = 354.0
+texture_normal = ExtResource("2_vc1ty")
+texture_pressed = ExtResource("3_yq6a1")
+
+[node name="Label" type="Label" parent="play"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.466
+anchor_right = 0.5
+anchor_bottom = 0.466
+offset_left = -63.0
+offset_top = -32.056
+offset_right = 66.0
+offset_bottom = 31.944
+text = "Play"
+label_settings = SubResource("LabelSettings_oytvk")
+
+[node name="options" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 468.0
+offset_top = 373.0
+offset_right = 720.0
+offset_bottom = 489.0
+texture_normal = ExtResource("2_vc1ty")
+texture_pressed = ExtResource("3_yq6a1")
+
+[node name="Label" type="Label" parent="options"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.496
+anchor_top = 0.466
+anchor_right = 0.496
+anchor_bottom = 0.466
+offset_left = -107.992
+offset_top = -32.056
+offset_right = 108.008
+offset_bottom = 31.944
+text = "Options"
+label_settings = SubResource("LabelSettings_oytvk")
+
+[node name="exit" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 470.0
+offset_top = 506.0
+offset_right = 722.0
+offset_bottom = 622.0
+texture_normal = ExtResource("2_vc1ty")
+texture_pressed = ExtResource("3_yq6a1")
+
+[node name="Label" type="Label" parent="exit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.506
+anchor_top = 0.466
+anchor_right = 0.506
+anchor_bottom = 0.466
+offset_left = -64.512
+offset_top = -32.056
+offset_right = 64.488
+offset_bottom = 31.944
+text = "Exit"
+label_settings = SubResource("LabelSettings_oytvk")
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
